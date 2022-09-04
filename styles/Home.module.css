@@ -1,0 +1,93 @@
+.container {
+  padding: 0 2rem;
+  background-image: url("/assets/background_mobile.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 3rem 0rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand {
+  margin-bottom: .9375rem;
+}
+
+.logo {
+  margin-bottom: 0.625rem;
+}
+
+.brand div h1, .brand div h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  margin: 0.3125rem 0rem;
+}
+
+.brand div h1 {
+  color: #F3A8C2;
+}
+
+.brand div h2 {
+  color: #a4ebe5;
+  font-size: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+}
+
+.buttons a {
+  color: #7E4FA8;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  position: relative;
+}
+
+.pink {
+  border-top: 18px solid #FFD7EB;
+  border-right: 18px solid #FFD7EB;
+  border-bottom: 18px solid #FFD7EB;
+  border-left: 18px solid transparent;
+  text-decoration: none;
+}
+
+.pink::before {
+  content: 'CÁTALOGO DE PRODUCTOS';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+/* APUNTES BONITODS */
+/* DIBUJITOS */
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .card,
+  .footer {
+    border-color: #222;
+  }
+  .code {
+    background: #111;
+  }
+  .logo img {
+    filter: invert(1);
+  }
+}
