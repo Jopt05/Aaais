@@ -1,8 +1,15 @@
 .container {
   padding: 0 2rem;
-  background-image: url("/assets/background_mobile.png");
-  background-size: contain;
-  background-repeat: no-repeat;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 500;
+  width: 100%;
+  height: 100%;
 }
 
 .main {
@@ -12,6 +19,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 900;
+  position: relative;
 }
 
 .brand {
@@ -42,30 +51,36 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 70%;
+  width: 80%;
 }
 
 .buttons a {
   color: #7E4FA8;
   text-align: center;
   text-transform: uppercase;
-  background-color: transparent;
   position: relative;
+  margin-bottom: .9375rem;
+  transition: transform .2s ease-in-out;
 }
 
-.pink {
-  border-top: 18px solid #FFD7EB;
-  border-right: 18px solid #FFD7EB;
-  border-bottom: 18px solid #FFD7EB;
-  border-left: 18px solid transparent;
-  text-decoration: none;
+.buttons a:hover {
+  transform: translateY(-5px);
 }
 
-.pink::before {
-  content: 'CÁTALOGO DE PRODUCTOS';
+.buttons a img {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+}
+
+.buttons a p {
+  position: relative;
+  z-index: 2000;
+  color: red;
+  padding: 0px 15px;
 }
 
 /* APUNTES BONITODS */
@@ -74,20 +89,42 @@
 .footer {
   display: flex;
   flex: 1;
-  padding: 2rem 0;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 900;
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
+.footer p {
+  text-transform: uppercase;
+  color: #F3A8C2;
+}
+
+@media only screen and (min-width: 500px) {
+  .buttons {
+    width: 60%;
   }
-  .code {
-    background: #111;
+}
+
+@media only screen and (min-width: 768px) {
+  .background {
+    display: none;
   }
-  .logo img {
-    filter: invert(1);
+
+  .brand {
+    margin-bottom: 2.5rem;
+  }
+
+  .buttons a {
+    margin-bottom: 2.5rem;
+  }
+
+  .container {
+    background-color: rgb(235,244,168)
+  }
+
+  
+  .buttons {
+    width: 20%;
   }
 }
